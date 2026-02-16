@@ -1,1 +1,23 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helmterra-deploy
+  labels:
+    app: helm1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helm1
+  template:
+    metadata:
+      labels:
+        app: helm1
+    spec: 
+      terminationGracePeriodSeconds: 1
+      containers:
+      - name: helmterra-pod
+        image: vishnu981824/app1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8082
