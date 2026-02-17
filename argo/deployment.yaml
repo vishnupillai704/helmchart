@@ -16,7 +16,7 @@ spec:
     spec: 
       terminationGracePeriodSeconds: 1
       containers:
-      - name: helmterra-pod
+      - name: helmterra-pod1
         image: vishnu981824/app1
         imagePullPolicy: Always
         ports:
